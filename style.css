@@ -1,0 +1,150 @@
+/* JOEHOE-huisstijl (brandbook v1.0). Licht is standaard; donker volgt de systeeminstelling. */
+
+/* Inter staat op de site zelf: bezoekers maken geen verbinding met Google Fonts. */
+@font-face {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/Inter-Regular.woff2") format("woff2");
+}
+@font-face {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("fonts/Inter-Medium.woff2") format("woff2");
+}
+@font-face {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("fonts/Inter-SemiBold.woff2") format("woff2");
+}
+@font-face {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("fonts/Inter-Bold.woff2") format("woff2");
+}
+
+:root {
+  color-scheme: light dark;
+
+  --jh-grond: #FFFFFF;
+  --jh-vlak: #F4F5F6;
+  --jh-vlak-blauw: #E5F4FC;
+  --jh-inkt: #3B3D40;
+  --jh-inkt-zacht: #6B6E73;
+  --jh-lijn: #DADCDF;
+  --jh-merk: #2FA4DE;
+  --jh-link: #1A6F9E;
+  --jh-focus: #1A6F9E;
+  --jh-logo-inkt: #3B3D40;
+
+  --jh-radius-l: 16px;
+  --jh-inhoud-max: 640px;
+  --jh-font: Inter, Arial, "Helvetica Neue", sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --jh-grond: #1E1F21;
+    --jh-vlak: #2A2C2F;
+    --jh-vlak-blauw: #17394D;
+    --jh-inkt: #F1F2F3;
+    --jh-inkt-zacht: #A7AAAF;
+    --jh-lijn: #3F4246;
+    --jh-link: #6CC3EE;
+    --jh-focus: #6CC3EE;
+    /* Negatief logo: J en woordmerk wit. */
+    --jh-logo-inkt: #FFFFFF;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--jh-grond);
+  color: var(--jh-inkt);
+  font: 400 16px/24px var(--jh-font);
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Koptekst: logo linksboven, daaronder de duo-lijn over de volle breedte van de inhoud. */
+.site-header,
+main,
+.site-footer {
+  max-width: calc(var(--jh-inhoud-max) + 48px);
+  margin: 0 auto;
+  padding-inline: 24px;
+}
+
+.site-header { padding-block: 32px 20px; }
+
+.logo { display: block; width: 180px; height: auto; }
+.logo .logo-inkt { fill: var(--jh-logo-inkt); }
+.logo .logo-blauw { fill: var(--jh-merk); }
+
+.duo-lijn {
+  max-width: var(--jh-inhoud-max);
+  margin: 0 auto;
+  height: 4px;
+  background: linear-gradient(to right, var(--jh-inkt) 50%, var(--jh-merk) 50%);
+}
+
+@media (max-width: 688px) {
+  .duo-lijn { margin-inline: 24px; }
+}
+
+main { padding-block: 40px 64px; }
+
+/* Typeschaal (app-schaal in px). */
+h1 { font-size: 32px; line-height: 38px; font-weight: 700; letter-spacing: -0.02em; margin: 0 0 8px; }
+h2 { font-size: 20px; line-height: 26px; font-weight: 700; letter-spacing: -0.01em; margin: 32px 0 8px; }
+p, ul { margin: 0 0 12px; }
+li { margin-bottom: 6px; }
+
+.label {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--jh-link);
+  margin: 0 0 8px;
+}
+
+.meta { font-size: 14px; line-height: 20px; color: var(--jh-inkt-zacht); margin-bottom: 24px; }
+.lead { font-size: 17px; line-height: 24px; color: var(--jh-inkt-zacht); margin-bottom: 32px; }
+
+/* Links: donker helderblauw, nooit helderblauw op wit. */
+a { color: var(--jh-link); text-underline-offset: 2px; }
+a:focus-visible { outline: 2px solid var(--jh-focus); outline-offset: 2px; border-radius: 4px; }
+.logo-link { display: inline-block; }
+
+/* Kaart op het tweede vlak, hoek 16. */
+.kaart {
+  background: var(--jh-vlak);
+  border-radius: var(--jh-radius-l);
+  padding: 24px;
+  margin-bottom: 32px;
+}
+.kaart h2 { margin-top: 0; }
+.kaart-links { margin: 16px 0 0; font-weight: 600; }
+
+.site-footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  justify-content: space-between;
+  padding-block: 24px 40px;
+  border-top: 1px solid var(--jh-lijn);
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--jh-inkt-zacht);
+}
+.site-footer span { letter-spacing: 0.16em; font-weight: 600; }
