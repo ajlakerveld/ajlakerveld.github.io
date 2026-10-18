@@ -148,3 +148,17 @@ a:focus-visible { outline: 2px solid var(--jh-focus); outline-offset: 2px; borde
   color: var(--jh-inkt-zacht);
 }
 .site-footer span { letter-spacing: 0.16em; font-weight: 600; }
+
+/* Smaller headings (FAQ) and a quiet divider between languages. */
+h3 {
+  margin: 24px 0 4px;
+  font-size: 17px;
+  line-height: 24px;
+  font-weight: 600;
+}
+
+hr {
+  margin: 48px 0 32px;
+  border: 0;
+  border-top: 1px solid var(--jh-lijn);
+}
