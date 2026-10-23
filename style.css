@@ -162,3 +162,9 @@ hr {
   border: 0;
   border-top: 1px solid var(--jh-lijn);
 }
+
+/* Language switch on multilingual pages (privacy policies). */
+.taalkeuze { display: flex; flex-wrap: wrap; gap: 4px 0; font-size: 14px; line-height: 22px; color: var(--jh-inkt-zacht); margin: 0 0 32px; }
+.taalkeuze a { white-space: nowrap; }
+.taalkeuze a:not(:last-child)::after { content: "·"; display: inline-block; margin: 0 8px; color: var(--jh-inkt-zacht); text-decoration: none; }
+main section[lang] { scroll-margin-top: 16px; }
