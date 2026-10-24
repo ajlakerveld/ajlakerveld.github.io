@@ -168,3 +168,35 @@ hr {
 .taalkeuze a { white-space: nowrap; }
 .taalkeuze a:not(:last-child)::after { content: "·"; display: inline-block; margin: 0 8px; color: var(--jh-inkt-zacht); text-decoration: none; }
 main section[lang] { scroll-margin-top: 16px; }
+
+/* App pages: the official App Store badge and a row of screenshots that scrolls sideways on small screens. */
+.app-badge { display: inline-block; margin: 0 0 32px; line-height: 0; }
+.app-badge img { height: 48px; width: auto; }
+.app-badge-klein img { height: 40px; }
+.binnenkort { font-size: 14px; line-height: 20px; color: var(--jh-inkt-zacht); margin: -20px 0 32px; }
+
+.screens {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 0 0 12px;
+  margin: 0 0 24px;
+}
+.screens img {
+  flex: 0 0 auto;
+  width: 200px;
+  height: auto;
+  border-radius: var(--jh-radius-l);
+  border: 1px solid var(--jh-lijn);
+  scroll-snap-align: start;
+}
+@media (min-width: 688px) {
+  .screens img { width: calc((100% - 32px) / 3); }
+}
+
+.functies { padding-left: 20px; }
+.kaart-kop { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 16px; }
+.kaart h2 a { color: inherit; text-decoration: none; }
+.kaart h2 a:hover { text-decoration: underline; }
+.kaart .app-badge { margin: 4px 0 0; }
